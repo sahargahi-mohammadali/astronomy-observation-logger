@@ -1,0 +1,6 @@
+,Type,Target,Observer,Filter,Exposure (s),Magnitude,Wavelength (nm)
+0,Photometric Observation,M33,Ali,G,120.0,56.0,
+1,Spectroscopic Observation,M78,Reza,B,180.0,,70.0
+2,Photometric Observation,M90,Amin,R,60.0,10.0,
+3,Spectroscopic Observation,M93,zahra,G,190.0,,78.0
+4,Spectroscopic Observation,M145,Maryam,R,98.0,,59.0
