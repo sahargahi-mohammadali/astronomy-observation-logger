@@ -120,45 +120,24 @@ def show_observation(df):
 
     print(df)
 
-
-
-
-def average_exposure(df):
+def statistical_analysis(df, average=False, maximum=False, minimum=False, total=False):
     if df.empty:
         print("No Observation found")
         return
 
-    average = df["Exposure (s)"].mean()
+    if average:
+        print(f"Average exposure time is  {df["Exposure (s)"].mean()} sec")
 
-    print(f"Average exposure time is {average} sec")
+    if maximum:
+        print(f"Maximum exposure time is  {df["Exposure (s)"].max()} sec")
 
-def max_exposure(df):
-    if df.empty:
-        print("No Observation found")
-        return
+    if minimum:
+        print(f"Minimum exposure time is  {df["Exposure (s)"].min()} sec")
 
-    maximum = df["Exposure (s)"].max()
+    if total:
+        print(f"Total exposure time is  {df["Exposure (s)"].sum()} sec")
 
-    print(f"Maximum exposure time is {maximum} sec")
-        
 
-def min_exposure(df):
-    if df.empty:
-        print("No Observation found")
-        return
-
-    minimum = df["Exposure (s)"].min()
-
-    print(f"Minimum exposure time is {minimum} sec")
-
-def total_exposure(df):
-    if df.empty:
-        print("No Observation found")
-        return
-
-    total = df["Exposure (s)"].sum()
-
-    print(f"Total exposure time is {total} sec")
 
 def search_observation(df):
     if df.empty:
@@ -221,13 +200,13 @@ while True:
     elif choice == "3":
         show_observation(df)
     elif choice == "4":
-        average_exposure(df)
+        statistical_analysis(df, average=True)
     elif choice == "5":
-        max_exposure(df)
+        statistical_analysis(df, maximum=True)
     elif choice == "6":
-        min_exposure(df)
+        statistical_analysis(df, minimum=True)
     elif choice == "7":
-        total_exposure(df)
+        statistical_analysis(df, total=True)
     elif choice == "8":
         search_observation(df)
     elif choice == "9":
